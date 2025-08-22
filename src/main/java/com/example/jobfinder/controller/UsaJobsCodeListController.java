@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/codelist")
-public class CodeListController {
+public class UsaJobsCodeListController {
     private final UsaJobsService usaJobsService;
 
-    public CodeListController(UsaJobsService usaJobsService) {
+    public UsaJobsCodeListController(UsaJobsService usaJobsService) {
         this.usaJobsService = usaJobsService;
     }
 
