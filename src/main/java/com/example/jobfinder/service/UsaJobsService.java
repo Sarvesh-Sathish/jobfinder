@@ -1,4 +1,5 @@
 package com.example.jobfinder.service;
+import lombok.extern.slf4j.Slf4j;
 
 import com.example.jobfinder.config.UsaJobsHeadersFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Slf4j
 @Service
 public class UsaJobsService {
     private UsaJobsHeadersFactory usaJobsHeadersFactory;
@@ -27,6 +29,7 @@ public class UsaJobsService {
         String url = apiUrl + "/codelist/"  + type;
 
         try {
+            log.info("Calling USAJobs API: {} with type={}", apiUrl, type);
             ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
             if (response.getStatusCode().is2xxSuccessful()) {
