@@ -2,8 +2,9 @@ package com.example.jobfinder.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class UsaJobsHeadersFactory {
     @Value("${usajobs.api.key}")
     private String apiKey;
